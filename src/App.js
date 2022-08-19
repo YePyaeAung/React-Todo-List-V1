@@ -8,8 +8,8 @@ import './App.css';
 function App() {
   // Tasks (TODO List) State
   const [ toDo, setTodDo ] = useState([
-    { "id": 1, "title": "Task 1", "completed": true},
-    { "id": 2, "title": "Task 2", "completed": false}
+    { "id": 2, "title": "Task 2", "completed": false},
+    { "id": 1, "title": "Task 1", "completed": true}
   ]);
 
   // Temp Tasks
@@ -51,28 +51,30 @@ function App() {
       {/* Display Todo Lists */}
       { toDo && toDo.length ? '' : 'No Tasks...'}
 
-      { toDo && toDo.map((task, index) => {
-        return(
-          <React.Fragment>
-            <div className="col taskBg">
-              <div className={ task.completed ? "done" : ""}>
-                <span className="taskNumber">{ index + 1 }</span>
-                <span className="taskText">{ task.title }</span>
+      { toDo && toDo
+        .sort((a, b) => a.id > b.id ? 1 : -1)
+        .map((task, index) => {
+          return(
+            <React.Fragment>
+              <div className="col taskBg">
+                <div className={ task.completed ? "done" : ""}>
+                  <span className="taskNumber">{ index + 1 }</span>
+                  <span className="taskText">{ task.title }</span>
+                </div>
+                <div className="iconsWrap">
+                  <span title='Complete / Not Complete'>
+                    <FontAwesomeIcon icon={ faCircleCheck }></FontAwesomeIcon>
+                  </span>
+                  <span title='Edit'>
+                    <FontAwesomeIcon icon={ faPen }></FontAwesomeIcon>
+                  </span>
+                  <span title='Delete'>
+                    <FontAwesomeIcon icon={ faTrashCan }></FontAwesomeIcon>
+                  </span>
+                </div>
               </div>
-              <div className="iconsWrap">
-                <span>
-                  <FontAwesomeIcon icon={ faCircleCheck }></FontAwesomeIcon>
-                </span>
-                <span>
-                  <FontAwesomeIcon icon={ faPen }></FontAwesomeIcon>
-                </span>
-                <span>
-                  <FontAwesomeIcon icon={ faTrashCan }></FontAwesomeIcon>
-                </span>
-              </div>
-            </div>
-          </React.Fragment>
-        )
+            </React.Fragment>
+          )
       })}
     </div>
   );
