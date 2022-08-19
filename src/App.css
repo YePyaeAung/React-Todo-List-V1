@@ -9,3 +9,33 @@ body {
   margin-top: 100px;
   margin-bottom: 100px;
 }
+.taskBg {
+  background-color: #555;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 10px 140px 10px 15px;
+  text-align: left;
+  font-size: 22px;
+  position: relative;
+}
+.taskBg div {
+  display: flex;
+  align-items: center;
+}
+.taskNumber {
+  color: #999;
+  border: 1px solid #999;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  margin-right: 8px;
+}
+.taskBg .done .taskText {
+  text-decoration: line-through;
+  opacity: 0.3;
+}
