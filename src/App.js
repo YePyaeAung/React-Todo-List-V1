@@ -48,6 +48,21 @@ function App() {
   return (
     <div className="container App">
       <h2>To Do List App (React Js)</h2>
+      {/* Display Todo Lists */}
+      { toDo && toDo.length ? '' : 'No Tasks...'}
+
+      { toDo && toDo.map((task, index) => {
+        return(
+          <React.Fragment>
+            <div className="col taskBg">
+              <div className={ task.completed ? "done" : ""}>
+                <span className="taskText">{ index + 1 }</span>
+                <span className="taskText">{ task.title }</span>
+              </div>
+            </div>
+          </React.Fragment>
+        )
+      })}
     </div>
   );
 }
