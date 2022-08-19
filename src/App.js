@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   // Tasks (TODO List) State
   const [ toDo, setTodDo ] = useState([
-    { "id": 1, "title": "Task 1", "completed": false},
+    { "id": 1, "title": "Task 1", "completed": true},
     { "id": 2, "title": "Task 2", "completed": false}
   ]);
 
@@ -56,7 +56,7 @@ function App() {
           <React.Fragment>
             <div className="col taskBg">
               <div className={ task.completed ? "done" : ""}>
-                <span className="taskText">{ index + 1 }</span>
+                <span className="taskNumber">{ index + 1 }</span>
                 <span className="taskText">{ task.title }</span>
               </div>
             </div>
