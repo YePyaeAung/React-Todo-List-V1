@@ -59,6 +59,17 @@ function App() {
                 <span className="taskNumber">{ index + 1 }</span>
                 <span className="taskText">{ task.title }</span>
               </div>
+              <div className="iconsWrap">
+                <span>
+                  <FontAwesomeIcon icon={ faCircleCheck }></FontAwesomeIcon>
+                </span>
+                <span>
+                  <FontAwesomeIcon icon={ faPen }></FontAwesomeIcon>
+                </span>
+                <span>
+                  <FontAwesomeIcon icon={ faTrashCan }></FontAwesomeIcon>
+                </span>
+              </div>
             </div>
           </React.Fragment>
         )
