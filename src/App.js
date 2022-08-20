@@ -9,7 +9,10 @@ import ToDo from './components/ToDo';
 
 function App() {
   // Tasks (TODO List) State
-  const [ toDo, setTodDo ] = useState([]);
+  const [ toDo, setTodDo ] = useState([
+    { id: 1, title: "Task 1", completed: false },
+    { id: 2, title: "Task 2", completed: false },
+  ]);
 
   // Temp Tasks
   const [ newTask, setNewTask ] = useState('');
